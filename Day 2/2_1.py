@@ -5,8 +5,8 @@ lines = file.read().splitlines()
 
 decoded = decoder(lines)
 
-horizontal = decoder[0]
-vertical = decoder[1]
+horizontal = decoded[0]
+vertical = decoded[1]
 
 horizontal_sum = sum(horizontal)
 vertical_sum = sum(vertical)
