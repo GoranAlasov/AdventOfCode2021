@@ -1,19 +1,18 @@
-def decoder(lines):
+def calculate_position(lines):
+    
+    split_lines = []
     horizontal = []
     vertical = []
-    
+
     for line in lines:
-        if "forward" in line:
-            string_split = line.split()
-            line = int(string_split[1])
-            horizontal.append(line)
-        elif "up" in line:
-            string_split = line.split()        
-            line = int(string_split[1]) * -1
-            vertical.append(line)
-        else:
-            string_split = line.split()
-            line = int(string_split[1])
-            vertical.append(line)
+        split_lines.append(line.split())
+    
+    for line in split_lines:
+        if "forward" in line[0]:                        
+            horizontal.append(int(line[1]))
+        elif "up" in line[0]:                        
+            vertical.append(int(line[1]) * -1)
+        else:                        
+            vertical.append(int(line[1]))
     
     return(horizontal, vertical)

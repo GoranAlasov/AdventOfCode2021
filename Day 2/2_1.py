@@ -1,12 +1,12 @@
-from decoder_2_1 import decoder
+from decoder_2_1 import calculate_position
 
 file = open("navigation.txt", "r")
 lines = file.read().splitlines()
 
-decoded = decoder(lines)
+position = calculate_position(lines)
 
-horizontal = decoded[0]
-vertical = decoded[1]
+horizontal = position[0]
+vertical = position[1]
 
 horizontal_sum = sum(horizontal)
 vertical_sum = sum(vertical)
